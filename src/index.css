@@ -224,4 +224,82 @@ body[data-theme="dark"] .theme-toggle {
     color: #ffffff;
     border: 1px solid #666666;
 }
+.filter-btn {
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+}
+ 
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+ 
+.filter-btn:last-child {
+  margin-right: 0;
+}
+ 
+.projects-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+ 
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+ 
+.projects-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+ 
+@media (max-width: 768px) {
+  .projects-header {
+    align-items: center;
+    text-align: center;
+  }
+}
+ 
+ 
+.container {
+    width: min(1200px, 100% - 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ /* === SECTION STYLES === */
+section{
+    padding: 60px 0;
+}
+section h2{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+ 
+section h2::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+ 
+
  

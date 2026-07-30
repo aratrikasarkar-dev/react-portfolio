@@ -63,5 +63,9 @@ font-size: 2.5rem;
     flex-direction: column;
     gap: 15px;
 }
-
+}
+@media (min-width: 900px) {
+  .hero-section h1 {
+    white-space: nowrap;
+  }
 }
