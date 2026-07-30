@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
 import ProjectCard from './components/Project Card/Project Card'
@@ -14,10 +14,22 @@ function App() {
     { id: 2, title: 'Portfolio Site', description: 'This very portfolio', tech: ['React', 'CSS'] },
     { id: 3, title: 'Todo Manager', description: 'Kanban task board', tech: ['JavaScript', 'HTML'] },
 ];
+// 1. Initialize theme from localStorage
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  // 2. Apply theme to body whenever it changes
+  useEffect(() => {
+    document.body.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+ 
+  // 3. Toggle function
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <>
-      <Navbar/>
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       {/* --- 2. Add the Hero Component Here! --- */}
       <Hero/>
       <main style={{ padding: '40px 5%', minHeight: '60vh', maxWidth: '1200px', margin: '0 auto' }}>
